@@ -1,0 +1,23 @@
+<mat-sidenav-container>
+  <mat-sidenav>
+    <app-menu (selectedPage)="changePage($event)" [currentPage]="page" *ngIf="page"></app-menu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <div class="hamburger-menu-wrapper">
+        <button mat-icon-button>
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div>App</div>
+      <div fxFlex fxLayout fxLayoutAling="flex-end" fxHide.xs class="navigation-wrapper">
+        <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+          <li><a routerLink="/login">{{ 'login' | capitalize }}</a></li>
+          <li><a routerLink="/main">{{ 'aktuális beállítások' | capitalize }}</a></li>
+          <li><a routerLink="/configurate">{{ 'konfigurálás' | capitalize }}</a></li>
+        </ul>
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

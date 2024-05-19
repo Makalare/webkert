@@ -1,0 +1,11 @@
+<h1>Mentett Beállítások</h1>
+
+<div *ngIf="deviceSetting">
+  <p>Lámpa Fördő: {{ getLampaStatus(deviceSetting.lampOn) }}</p>
+  <p>Lámpa Színe: {{ deviceSetting.lampColor }}</p>
+  <p>Hűtő Hőmérséklete: {{ deviceSetting.fridgeTemperature }}°C</p>
+  <p>Radiátor Hőmérséklete: {{ deviceSetting.radiatorTemperature }}°C</p>
+  <p>Tv: {{ getTvStatus(deviceSetting.tvOn) }}</p>
+  <button [routerLink]="['/configurate']">Frissítés</button>
+  <button (click)="deleteSetting(deviceSetting)">Törlés</button>
+</div>

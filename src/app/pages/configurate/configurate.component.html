@@ -1,0 +1,30 @@
+<h1>Konfigurációs Oldal</h1>
+
+
+<mat-slide-toggle [(ngModel)]="lampOn">Lámpa Be/Ki</mat-slide-toggle>
+<br><br>
+
+
+<mat-form-field appearance="fill">
+  <mat-label>Lámpa Színe</mat-label>
+  <input matInput [(ngModel)]="lampColor" type="text">
+</mat-form-field>
+<br><br>
+
+
+<input type="number" [(ngModel)]="fridgeTemperature">
+<p>Hűtő Hőmérséklet: {{fridgeTemperature}}°C</p>
+
+
+<input type="number" [(ngModel)]="radiatorTemperature">
+<p>Radiátor Hőmérséklet: {{radiatorTemperature}}°C</p>
+
+
+<mat-slide-toggle [(ngModel)]="tvOn">TV Be/Ki</mat-slide-toggle>
+<br><br>
+
+
+<button mat-raised-button color="primary" (click)="saveSettings()">Mentés</button>
+
+
+<button mat-raised-button color="accent" (click)="startVacuum()">Porszívó Elindítása</button>
